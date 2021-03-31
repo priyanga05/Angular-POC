@@ -1,28 +1,63 @@
-<div class="form">
-
-    <form name="myform" #myform="ngForm">
+<div class="container">
+    <form   [formGroup]="myform" (ngSubmit)="onSubmit(myform)" >
+    <div class="header">
         <h1><b>REGISTRATION</b></h1>
-        <label for="fname"><b>First Name</b></label>
-        <input type="text" ngModel name="firstName" class="fname" id="fname" placeholder="First Name"><br><br>
+    </div>
+        <div class="form">
+      
+        <label ><b>First Name</b></label>
+        <input type="text"  formControlName="firstname" placeholder="First Name"><br>
+    <div *ngIf="myform.controls['firstname'].hasError('required')"  style="color: red;">Fields required</div><br>
+    </div>
+    <!-- <div class="form">
         <label for="lname"><b>Last Name</b></label>
-        <input type="text" ngModel name="Last Name" class="lname" id="lname" placeholder="Last Name"><br><br>
+        <input type="text" class="lname" [ngClass]="{'form-control': true,'is-valid': ! lastname.valid && lastname.touched,'is-valid': lastname.valid}"  formControlname="lastname" id="lname" placeholder="Last Name"><br><br>
+   <small *ngIf= "lastname.errors?.required && lastname.touched" class="form" id="lname" style="color: red;">Fields required</small>
+    </div>
+    <div class="form">
         <label for="email"><b>Email</b></label>
-        <input type="email" ngModel name="mailid" class="mail" id="email" placeholder="Email" ><br><br><br>
+        <input type="email"  class="mail" formControlName="email" id="email" placeholder="Email" ><br><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">
         <label for="password"><b>Password</b></label>
-        <input type="password" ngModel name="Password" class="pass1" id="password" placeholder="Password"><br><br>
+        <input type="password" class="pass1" formControlName="password" id="password" placeholder="Password"><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">
         <label for="Cpassword"><b>Confirm Password</b></label>
-        <input type="password" ngModel name="CPassword" class="pass2" id="Cpassword" placeholder="Password"><<br><br>
+        <input type="password"  class="pass2" formControlName="cpassword" id="Cpassword" placeholder="Password"><<br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>    
+    <div class="form">
         <label for="DOB"><b>Date of Birth</b></label>
-        <input type="date" ngModel name="dob" class="dateofbirth" id="dob"/><br><br>
+        <input type="date"  class="dateofbirth" formControlName="dob" id="dob"/><br><br>
+        <input type="date"  class="dateofbirth" id="dob"/><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">
         <label for="phonenumber"><b>Phone number</b></label>
-        <input type="tel" ngModel name="phoneno" class="phone" id="phonenumber" placeholder="Phone number" required><br><br>
+        <input type="tel"  class="phone" formControlName="phoneno" id="phonenumber" placeholder="Phone number" required><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">
         <label for="height"><b>Height</b></label>
-        <input type="text" ngModel name="height" class="height" id="height" placeholder="Please write your height in cm" /><br><br>
+        <input type="text"  class="height" formControlName="height" id="height" placeholder="Please write your height in cm" /><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">
         <label for="weight"><b>Weight</b></label>
-        <input type="text" ngModel name="weight"  class="weight" id="weight" placeholder="Please write your weight in kgs" /><br><br>
+        <input type="text"   class="weight" formControlName="weight" id="weight" placeholder="Please write your weight in kgs" /><br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div>
+    <div class="form">   
         <label><b>Gender</b></label>
-        <input type="radio"  ngModel name="gen1" class="gen1" id="gender1" name="gender" value="male">Male
-        <input type="radio"   ngModel name="gen2" class="gen2" id="gender2"name="gender" value="female">Female<br><br>
-        <button type="submit" value="submit" (click)="submit(myform)">Register</button>
+        <input type="radio"   class="gen1"  formControlName="gender" id="gender1" name="gender" value="male">Male
+        <input type="radio"  class="gen2" formControlName="gender" id="gender2"name="gender" value="female">Female<br><br>
+        <div class="form" style="color: red;">Fields required</div>
+    </div> -->
+    <div class="form">
+        <button type="submit" value="submit" >Register</button>
+    </div>
     </form>
 </div>

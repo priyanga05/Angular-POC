@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sample',
@@ -7,12 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SampleComponent implements OnInit {
 register:any="";
-  constructor() { }
+ myform: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.myform = this.fb.group({
+     firstname : ["",Validators.required],
+    //  lastname : ["",Validators.required],
+    //  email : ["",Validators.required],
+    //  password : ["",Validators.required],
+    //  Cpassword : ["",Validators.required], 
+    //  dob : ["",Validators],
+    //  phoneno : ["",Validators],
+    //  height : ["",Validators],
+    //  weight : ["",Validators],
+    //  gender : ["",Validators]
+    });
   }
-  submit(myform){
-    console.log(myform);
-    console.log(myform.value);
+  onSubmit(myform){
+   console.log(myform);
   }
 }
