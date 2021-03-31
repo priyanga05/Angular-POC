@@ -1,0 +1,28 @@
+<div class="form">
+
+    <form name="myform" #myform="ngForm">
+        <h1><b>REGISTRATION</b></h1>
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" ngModel name="firstName" class="fname" id="fname" placeholder="First Name"><br><br>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" ngModel name="Last Name" class="lname" id="lname" placeholder="Last Name"><br><br>
+        <label for="email"><b>Email</b></label>
+        <input type="email" ngModel name="mailid" class="mail" id="email" placeholder="Email" ><br><br><br>
+        <label for="password"><b>Password</b></label>
+        <input type="password" ngModel name="Password" class="pass1" id="password" placeholder="Password"><br><br>
+        <label for="Cpassword"><b>Confirm Password</b></label>
+        <input type="password" ngModel name="CPassword" class="pass2" id="Cpassword" placeholder="Password"><<br><br>
+        <label for="DOB"><b>Date of Birth</b></label>
+        <input type="date" ngModel name="dob" class="dateofbirth" id="dob"/><br><br>
+        <label for="phonenumber"><b>Phone number</b></label>
+        <input type="tel" ngModel name="phoneno" class="phone" id="phonenumber" placeholder="Phone number" required><br><br>
+        <label for="height"><b>Height</b></label>
+        <input type="text" ngModel name="height" class="height" id="height" placeholder="Please write your height in cm" /><br><br>
+        <label for="weight"><b>Weight</b></label>
+        <input type="text" ngModel name="weight"  class="weight" id="weight" placeholder="Please write your weight in kgs" /><br><br>
+        <label><b>Gender</b></label>
+        <input type="radio"  ngModel name="gen1" class="gen1" id="gender1" name="gender" value="male">Male
+        <input type="radio"   ngModel name="gen2" class="gen2" id="gender2"name="gender" value="female">Female<br><br>
+        <button type="submit" value="submit" (click)="submit(myform)">Register</button>
+    </form>
+</div>
