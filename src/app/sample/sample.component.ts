@@ -14,18 +14,18 @@ register:any="";
   ngOnInit(): void {
     this.myform = this.fb.group({
      firstname : ["",Validators.required],
-    //  lastname : ["",Validators.required],
-    //  email : ["",Validators.required],
-    //  password : ["",Validators.required],
-    //  Cpassword : ["",Validators.required], 
-    //  dob : ["",Validators],
-    //  phoneno : ["",Validators],
-    //  height : ["",Validators],
-    //  weight : ["",Validators],
-    //  gender : ["",Validators]
+     lastname : ["",Validators.required],
+      email : ["",Validators.required],
+      password : ["",Validators.required],
+     // Cpassword : ["",Validators.required], 
+     dob : ["",Validators.required],
+      phoneno : ["",Validators.required],
+      height : ["",Validators.required],
+    weight : ["",Validators.required],
+      gender : ["",Validators.required]
     });
   }
   onSubmit(myform){
-   console.log(myform);
+   console.log(myform.value);
   }
 }
