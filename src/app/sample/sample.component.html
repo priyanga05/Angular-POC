@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="reg">
     <form   [formGroup]="myform" (ngSubmit)="onSubmit(myform)" >
     <div class="header">
         <h1><b>REGISTRATION</b></h1>
@@ -22,7 +22,8 @@
      <div class="form">
         <label for="password"><b>Password</b></label>
         <input type="password" formControlName="password" placeholder="Password"><br>
-        <div *ngIf="myform.controls['password'].hasError('required')" style="color: red;">Fields required</div><br>  
+        <div *ngIf="myform.controls['password'].hasError('required')" style="color: red;">Fields required</div>
+        <div *ngIf="myform.controls['password'].hasError('minlength')" style="color: red;">enter atleast 8 characters</div><br>  
     </div>
      <!-- <div class="form">
         <label for="Cpassword"><b>Confirm Password</b></label>
@@ -37,7 +38,8 @@
      <div class="form">
         <label for="phonenumber"><b>Phone number</b></label>
         <input type="tel" formControlName="phoneno" placeholder="Phone number" required><br>
-         <div *ngIf="myform.controls['phoneno'].hasError('required')" style="color: red;">Fields required</div><br>
+         <div *ngIf="myform.controls['phoneno'].hasError('required')" style="color: red;">Fields required</div>
+         <div *ngIf="myform.controls['phoneno'].hasError('pattern')" style="color: red;">Enter valid phone number</div><br>
             </div>
      <div class="form">
         <label for="height"><b>Height</b></label>
@@ -60,3 +62,37 @@
     </div>
     </form>
 </div>
+<div *ngIf="edu">
+<app-education [userValue]="userdetails" (sendValue)="getDetails($event)"></app-education>
+</div>
+
+    <div class="container" *ngIf="details">
+        <div class="form"><b>Your Details are Successfully registered</b></div>
+        <div class="form">
+            <label><b>FirstName:</b></label>{{userdetails.firstname}}
+        </div>
+        <div class="form">
+            <label><b>LastName:</b></label>{{userdetails.lastname}}
+        </div>
+        <div class="form">
+            <label><b>Email:</b></label>{{userdetails.email}}
+        </div>
+        <div class="form">
+            <label><b>DOB:</b></label>{{userdetails.dob}}
+        </div>
+        <div class="form">
+            <label><b>Phone Number:</b></label>{{userdetails.phoneno}}
+        </div>
+        <div class="form">
+            <label><b>Gender:</b></label>{{userdetails.gender}}
+        </div>
+        <div class="form">
+            <label>College Name:</label>{{userdetails.child.collegename}}
+        </div>
+        <div class="form">
+            <label><b>Year Of Completion:</b></label>{{userdetails.child.yearofcompletion}}
+        </div>
+        <div class="form">
+            <label><b>CGPA:</b></label>{{userdetails.child.cgpa}}
+        </div>
+    </div>
