@@ -12,6 +12,7 @@ register:any="";
  myform: FormGroup;
  reg=true;
  edu=false;
+ adrs=false;
  details=false;
  userdetails = new User();
   
@@ -40,7 +41,13 @@ register:any="";
   getDetails(data:User){
 this.userdetails=data;
 console.log(data);
-this.details=true;
+this.adrs=true;
 this.edu=false;
+  }
+  getFinalValue(addressvalue:User){
+    console.log(addressvalue);
+    this.userdetails=addressvalue;
+    this.adrs=false;
+    this.details=true;
   }
 }

@@ -65,7 +65,9 @@
 <div *ngIf="edu">
 <app-education [userValue]="userdetails" (sendValue)="getDetails($event)"></app-education>
 </div>
-
+ <div *ngIf="adrs">
+<app-address [finalValue]="userdetails" (addrs)="getFinalValue($event)" ></app-address>
+</div>  
     <div class="container" *ngIf="details">
         <div class="form"><b>Your Details are Successfully registered</b></div>
         <div class="form">

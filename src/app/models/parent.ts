@@ -1,5 +1,6 @@
 
 import{ Child } from "./Child";
+import { Address } from "../models/address";
 export class User{
 
     firstname:String;
@@ -12,4 +13,5 @@ export class User{
     weight:String;
     gender:String;
     child:Child;
+    address:Address;
 }

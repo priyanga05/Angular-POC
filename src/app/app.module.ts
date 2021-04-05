@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SampleComponent } from './sample/sample.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EducationComponent } from './education/education.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SampleComponent,
-    EducationComponent
+    EducationComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

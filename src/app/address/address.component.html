@@ -1,0 +1,42 @@
+<!-- <p>address works!</p> -->
+<div class="container">
+    <h3>Address Details</h3>
+    <form [formGroup]="addressform" (ngSubmit)="Submit()">
+
+<div class="form">
+    <label><b>Address Line1</b></label>
+    <input type="text" formControlName="addressline1"/><br>
+    <div *ngIf="addressform.controls['addressline1'].hasError('required')" style="color: red;">Fields required</div><br>
+</div>
+<div class="form">
+    <label><b>Address Line2</b></label>
+    <input type="text" formControlName="addressline2"/><br>
+    <div *ngIf="addressform.controls['addressline2'].hasError('required')" style="color: red;">Fields required</div><br>
+</div>
+<div class="form">
+    <label><b>City</b></label>
+    <select formControlName="city" id="city">
+        <option value="select">--select--</option>
+<option value="chennai">Chennai</option>
+<option value="trichy">Trichy</option>
+<option value="coimbatore">Coimbatore</option>
+<option value="madurai">Madurai</option>
+</select>
+<div *ngIf="addressform.controls['city'].hasError('required')" style="color: red;">Fields required</div>
+</div>
+<div class="form">
+    <label><b>State</b></label>
+    <select formControlName="state" id="state">
+        <option value="select">--select--</option>
+        <option value="chennai">Chennai</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="kerala">Kerala</option>
+        <option value="mumbai">Mumbai</option>
+    </select>
+    <div *ngIf="addressform.controls['state'].hasError('required')" style="color: red;">Fields required</div>
+</div>
+<div class="form">
+    <button type="submit">Submit</button>
+</div>
+</form>
+</div>
