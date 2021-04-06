@@ -69,7 +69,7 @@
 <app-address [finalValue]="userdetails" (addrs)="getFinalValue($event)" ></app-address>
 </div>  
     <div class="container" *ngIf="details">
-        <div class="form"><b>Your Details are Successfully registered</b></div>
+        <div class="form"><h3>Your Details are Successfully registered</h3></div>
         <div class="form">
             <label><b>FirstName:</b></label>{{userdetails.firstname}}
         </div>
@@ -89,7 +89,19 @@
             <label><b>Gender:</b></label>{{userdetails.gender}}
         </div>
         <div class="form">
-            <label>College Name:</label>{{userdetails.child.collegename}}
+            <label><b>AddressLine1:</b></label>{{userdetails.address.addressline1}}
+        </div>
+        <div class="form">
+            <label><b>AddressLine2:</b></label>{{userdetails.address.addressline2}}
+        </div>
+        <div class="form">
+            <label><b>City:</b></label>{{userdetails.address.city}}
+        </div>
+        <div class="form">
+            <label><b>State:</b></label>{{userdetails.address.state}}
+        </div>
+        <div class="form">
+            <label><b>College Name:</b></label>{{userdetails.child.collegename}}
         </div>
         <div class="form">
             <label><b>Year Of Completion:</b></label>{{userdetails.child.yearofcompletion}}

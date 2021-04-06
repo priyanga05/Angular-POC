@@ -16,12 +16,12 @@ addressform: FormGroup;
   ngOnInit(): void {
     this.addressform = this.fb.group({
       addressline1 :["",Validators.required],
-      addressline2 :["",Validators.required],
-      city :["",Validators.required],
-      state :["",Validators.required]
+      city :["",Validators.required]
+      
     });
   }
   Submit(){
+    
     console.log(this.addressform.value);
     this.finalValue.address=this.addressform.value;
     this.addrs.emit(this.finalValue);
